@@ -2,6 +2,7 @@
 
 ### for node server or django server
 
+```
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
@@ -16,13 +17,15 @@ server {
 
 }
 
+```
+
 
 
 
 ### for react js or html deployment 
 
 
-
+```
 server{
 	listen 80;
 	listen [::]:80;
@@ -33,4 +36,4 @@ server{
                 try_files $uri /index.html =404;
         }
 }
-
+```
