@@ -29,7 +29,7 @@ server {
 server{
 	listen 80;
 	listen [::]:80;
-	root /home/ubuntu/gazaari-admin/build/;
+	root <LOCATION OF PROJECT BUILD /home/ubuntu/build/>;
 	index index.html index.html;
 	server_name <domain>;
 	location / {
