@@ -101,8 +101,8 @@
     - sudo systemctl restart <project_name>
     
     
-   # DEPLOY DJANGO PROJECT WITH JENKINS
-     ### Create deploy.sh file in project folder
+ # DEPLOY DJANGO PROJECT WITH JENKINS
+   ### Create deploy.sh file in project folder
      
      ```
       #!/bin/bash
