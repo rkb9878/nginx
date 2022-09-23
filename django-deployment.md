@@ -1,7 +1,7 @@
 # CREATE DJANGO PROJECT
 
   ```
-        #!/bin/bash  
+     #!/bin/bash  
 
       if ! [ -d "env" ];
       then
@@ -104,66 +104,66 @@
  # DEPLOY DJANGO PROJECT WITH JENKINS
    ### Create deploy.sh file in project folder
      
-     ```
-      #!/bin/bash
-      chmod -x deploy.sh
+   ```
+    #!/bin/bash
+    chmod -x deploy.sh
 
-      echo "check folder exist or not"
-      if [-d "env"]; then
-          source env/bin/activate
-          pip install cryptography
-          pip install -r requirements.txt
-      else
-          echo "file creating started"
-          python3 -m venv env
-          source env/bin/activate
-          pip install cryptography
-          python -m pip install --upgrade pip
-          pip install gunicorn
-          echo "requirements installation start"
-          pip install -r requirements.txt  
-      fi
+    echo "check folder exist or not"
+    if [-d "env"]; then
+        source env/bin/activate
+        pip install cryptography
+        pip install -r requirements.txt
+    else
+        echo "file creating started"
+        python3 -m venv env
+        source env/bin/activate
+        pip install cryptography
+        python -m pip install --upgrade pip
+        pip install gunicorn
+        echo "requirements installation start"
+        pip install -r requirements.txt  
+    fi
 
-      python manage.py makemigrations
-      python manage.py migrate
-      python manage.py collectstatic -- no-input
-      if [-d "env"]; then
-          echo "Hello"
-      else
-          mkdir media
-          chmod 777 media
-      fi
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py collectstatic -- no-input
+    if [-d "env"]; then
+        echo "Hello"
+    else
+        mkdir media
+        chmod 777 media
+    fi
 
-      echo "Migrations done"
-
-
-
-      if [ -f '/etc/systemd/system/gunicorn.service'];then
-          echo "$USER"
-          echo "$PWD"
-          sudo systemctl daemon-reload
-          sudo systemctl start gunicorn
-      else
-          sudo cp -rf gunicorn.service /etc/systemd/system/
-          echo "$USER"
-          echo "$PWD"
-          sudo systemctl daemon-reload
-          sudo systemctl start gunicorn
-      fi
-
-      echo "Gunicorn has started."
-
-      sudo systemctl enable gunicorn
-
-      echo "Gunicorn has been enabled."
-
-      sudo systemctl restart gunicorn
+    echo "Migrations done"
 
 
-      sudo systemctl status gunicorn
+
+    if [ -f '/etc/systemd/system/gunicorn.service'];then
+        echo "$USER"
+        echo "$PWD"
+        sudo systemctl daemon-reload
+        sudo systemctl start gunicorn
+    else
+        sudo cp -rf gunicorn.service /etc/systemd/system/
+        echo "$USER"
+        echo "$PWD"
+        sudo systemctl daemon-reload
+        sudo systemctl start gunicorn
+    fi
+
+    echo "Gunicorn has started."
+
+    sudo systemctl enable gunicorn
+
+    echo "Gunicorn has been enabled."
+
+    sudo systemctl restart gunicorn
 
 
-     ```
+    sudo systemctl status gunicorn
+
+
+   ```
 
 
 
