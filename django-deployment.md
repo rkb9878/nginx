@@ -102,7 +102,8 @@
     
     
    # DEPLOY DJANGO PROJECT WITH JENKINS
-      ### Create deploy.sh file in project folder
+     ### Create deploy.sh file in project folder
+     
      ```
       #!/bin/bash
       chmod -x deploy.sh
