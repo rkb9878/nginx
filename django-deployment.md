@@ -64,7 +64,7 @@
     WantedBy=multi-user.target
   ```
 
-#nginx
+# NGINX
 
   ```
     server {
