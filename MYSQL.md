@@ -113,4 +113,4 @@ STEP.3: Connect with mysql
 
         mysql -u username -h mysql_server_ip -p
     
-**You can connect with other software like DBEAVER or WorkBench or Xampp**
+**You can also connect with other software like DBEAVER or WorkBench or Xampp**
